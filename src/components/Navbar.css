@@ -1,0 +1,118 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar--scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.navbar__logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar__logo-dot {
+  color: var(--accent);
+}
+
+.navbar__links {
+  display: flex;
+  gap: 32px;
+}
+
+.navbar__links a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.navbar__links a:hover {
+  color: var(--text);
+}
+
+.navbar__cta {
+  font-size: 0.85rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 8px 18px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background: var(--accent);
+  color: #0a0a0a;
+}
+
+.navbar__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.navbar__burger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.navbar__mobile {
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 24px 24px;
+}
+
+.navbar__mobile a {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text-muted);
+}
+
+.navbar__mobile-cta {
+  color: var(--accent) !important;
+  border-bottom: none !important;
+}
+
+@media (max-width: 760px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
+  }
+  .navbar__burger {
+    display: flex;
+  }
+}
